@@ -56,7 +56,7 @@ func DecodeWithConstructors(buf []byte, structPtr interface{}, cons Constructors
 	val := reflect.ValueOf(structPtr)
 	// if its NOT a pointer, it is bad return an error
 	if val.Kind() != reflect.Ptr {
-		return errors.New("Decode has been given a non pointer type")
+		return errors.New("decode has been given a non pointer type")
 	}
 	return de.message(buf, val.Elem())
 }
