@@ -105,7 +105,7 @@ func (de *decoder) message(buf []byte, sval reflect.Value) error {
 		rem, err := de.value(wiretype, buf, field)
 		if err != nil {
 			if fieldi < len(fields) && fields[fieldi] != nil {
-				return fmt.Errorf("Error while decoding FieldName %s: %v", fields[fieldi].Name, err)
+				return fmt.Errorf("error while decoding FieldName %s: %v", fields[fieldi].Name, err)
 			} else {
 				return err
 			}
